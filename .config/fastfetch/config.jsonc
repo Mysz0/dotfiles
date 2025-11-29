@@ -1,0 +1,94 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+   // "logo": {
+   //     "source": "~/.config/fastfetch/ascii.txt",
+   //     "color": {"1": "0"}
+  //  },
+    "modules": [
+        "break",
+
+        // System section
+        {
+            "type": "custom",
+            "format": "{#1}┌───────── System Information ─────────┐"
+        },
+        {
+            "type": "os",
+            "key": "│ ├  OS",
+            "keyColor": "green"
+        },
+        {
+            "type": "kernel",
+            "key": "│ ├  Kernel",
+            "keyColor": "green"
+        },
+        {
+            "type": "uptime",
+            "key": "│ ├  Uptime",
+            "keyColor": "green"
+        },
+	{
+	    "type": "packages",
+            "key": "│ └ 󰏖 Packages",
+            "keyColor": "green",
+      	    "format": "{1}",          
+    	    "manager": "pacman"       
+	},
+        {
+            "type": "custom",
+            "format": "{#1}└──────────────────────────────────────┘"
+        },
+
+        "break",
+
+        // Hardware section
+        {
+            "type": "custom",
+            "format": "{#1}┌───────────────────────── Hardware ─────────────────────────┐"
+        },
+        {
+            "type": "cpu",
+            "key": "│ ├  CPU",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "gpu",
+            "key": "│ ├ 󰍛 GPU",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "memory",
+            "key": "│ ├  Memory",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "disk",
+            "key": "│ └ 󰋊 Disk",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "custom",
+            "format": "{#1}└────────────────────────────────────────────────────────────┘"
+        },
+
+        "break",
+
+        // Colors section
+        {
+            "type": "custom",
+            "format": "{#1}┌───────────── Colors ─────────────┐"
+        },
+	{
+        "type": "colors",
+	"key": "│  ",
+	"symbol": "circle"
+	},
+        {
+            "type": "custom",
+            "format": "{#1}└──────────────────────────────────┘"
+        },
+
+        "break"
+    ]
+}
+

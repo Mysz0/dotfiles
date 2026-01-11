@@ -1,0 +1,166 @@
+/***
+ * ┏┓┳┳┓┏┓┏┳┳
+ * ┣ ┃┃┃┃┃ ┃┃
+ * ┗┛┛ ┗┗┛┗┛┻
+ * */
+
+
+/*****----- Configuration -----*****/
+configuration {
+    modi:                        "drun";
+    show-icons:                  false;
+}
+
+/*****----- Global Properties -----*****/
+@import '~/.config/rofi/applets/shared/colors.rasi'
+@import '~/.config/rofi/applets/shared/fonts.rasi'
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       800px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    enabled:                     true;
+    border:                      2px;
+    border-color:                @outline;
+    border-radius:               20px;
+    cursor:                      "default";
+    /* Switched to surface-alpha for Hyprland blur */
+    background-color:            @surface-alpha;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    padding:                     14px;
+    children:                    [ "inputbar", "listbox" ];
+}
+
+listbox {
+    spacing:                     20px;
+    padding:                     20px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "message", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    /* Reduced vertical padding since the wallpaper image is gone */
+    padding:                     40px; 
+    background-color:            transparent;
+    /* Removed background-image to enable blur */
+    border-radius:               14px;
+    text-color:                  @on-surface;
+    orientation:                 horizontal;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "🦊";
+    padding:                     12px;
+    border-radius:               100%;
+    background-color:            @primary-fixed-alpha;
+    text-color:                  @on-primary-fixed;
+}
+
+entry {
+    enabled:                     true;
+    expand:                      true;
+    padding:                     12px 16px;
+    border-radius:               100%;
+    background-color:            @primary-fixed-alpha;
+    text-color:                  @on-surface;
+    cursor:                      text;
+    placeholder:                 "Select emoji";
+    placeholder-color:           inherit;
+}
+
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     2;
+    lines:                       5;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                false;
+    fixed-columns:               false;
+    spacing:                     6px;
+    background-color:            transparent;
+    text-color:                  @on-surface;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     12px;
+    border-radius:               12px;
+    background-color:            transparent;
+    text-color:                  @on-surface;
+    cursor:                      pointer;
+}
+
+/* Unified states to keep the background clean and blurred */
+element normal.normal,
+element normal.urgent,
+element normal.active,
+element alternate.normal,
+element alternate.urgent,
+element alternate.active {
+    background-color:            transparent;
+    text-color:                  @on-surface;
+}
+
+element selected.normal {
+    background-color:            @primary-fixed-alpha;
+    text-color:                  @on-primary-fixed;
+    border:                      0px 0px 0px 4px;
+    border-color:                @primary;
+}
+
+element-text {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Message -----*****/
+message {
+    background-color:            transparent;
+}
+
+textbox {
+    padding:                     12px;
+    border-radius:               100%;
+    background-color:            @secondary-container;
+    text-color:                  @on-secondary-container;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+error-message {
+    padding:                     15px;
+    border-radius:               12px;
+    background-color:            @error-container;
+    text-color:                  @on-error-container;
+}

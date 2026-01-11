@@ -1,0 +1,62 @@
+{
+    "$schema": "/etc/xdg/swaync/configSchema.json",
+    "positionX": "right",
+    "positionY": "top",
+
+    "timeout": 5,
+    "timeout-low": 3,
+    "timeout-critical": 10,
+
+    "control-center-margin-top": 10,
+    "control-center-margin-bottom": 10,
+    "control-center-margin-right": 10,
+    "control-center-margin-left": 10,
+    
+    "notification-window-width": 300,
+    "control-center-width": 300,
+    "control-center-height": 500,
+    "fit-to-screen": false,
+    
+    "layer": "overlay",
+    "control-center-layer": "top",
+    "layer-shell": true,
+    "cssPriority": "user",
+    "hide-on-action": false,
+    "script-fail-notify": true,
+    "ignore-gtk-theme": true,
+    "widgets": [
+        "title",
+        "dnd",
+        "volume",
+        "buttons-grid",
+        "notifications"
+    ],
+    "widget-config": {
+        "title": {
+            "clear-all-button": true,
+            "button-text": "Clear"
+        },
+        "dnd": {
+            "label": "Do Not Disturb"
+        },
+        "volume": {
+            "label": "󰕾 "
+        },
+        "buttons-grid": {
+            "actions": [
+                {
+                    "label": " ",
+                    "command": "kitty nmcli"
+                },
+                {
+                    "label": "󰂯",
+                    "command": "blueman-manager"
+                },
+                {
+                    "label": "󰕾",
+                    "command": "pavucontrol"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,86 @@
+@import url('colors.css');
+
+* {
+    font-family: "Inter", "JetBrainsMono Nerd Font", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    margin: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+/* --- Container Styling --- */
+.modules-left, .modules-center, .modules-right {
+    background-color: alpha(@surface, 0.85);
+    border: 1px solid alpha(@on_surface, 0.15);
+    padding: 4px 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Module Spacing --- */
+#clock, #custom-pacman, #custom-mpris, #tray, #pulseaudio, #bluetooth, #network, #custom-notification {
+    padding: 0 8px;
+    color: @on_surface;
+    min-height: 30px;
+}
+
+/* Clock Separator Line */
+#clock {
+    border-right: 1px solid alpha(@on_surface, 0.15);
+    margin-right: 6px;
+    padding-right: 12px;
+}
+
+/* --- Workspace Section (With Animation) --- */
+#workspaces {
+    padding: 0 3px;
+}
+
+#workspaces button {
+    padding: 0px 5px; 
+    margin: 0px 2px;  
+    color: alpha(@on_surface, 0.2); 
+    font-size: 11px;
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#workspaces button:not(.empty) {
+    color: alpha(@primary, 0.3); 
+}
+
+#workspaces button.active {
+    background-color: alpha(@primary, 0.4);
+    min-width: 30px;
+    margin: 5px 3px;
+    border-radius: 99px;
+    color: transparent; /* Keeps the dot hidden inside the pill */
+    /* Ensure the active state also transitions smoothly */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Right Section Consistency --- */
+.modules-right > widget > #tray,
+.modules-right > widget > #pulseaudio,
+.modules-right > widget > #network {
+    padding: 0 10px;
+}
+
+/* --- Solid Popups --- */
+tooltip, menu, #calendar {
+    background-color: @surface;
+    border: 1px solid @primary;
+    border-radius: 12px;
+    padding: 8px;
+}
+
+/* --- Hover Effects --- */
+#pulseaudio:hover, #bluetooth:hover, #network:hover, #custom-notification:hover, #clock:hover {
+    color: @primary;
+    background-color: alpha(@primary, 0.1);
+    border-radius: 10px;
+}

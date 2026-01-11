@@ -1,0 +1,11 @@
+/*
+* Css Colors
+* Generated with Matugen
+* Wallpaper: {{image}}
+*/
+
+@define-color wallpaper-path "{{image}}";
+
+<* for name, value in colors *>
+    @define-color {{name}} {{value.default.hex}};
+<* endfor *>

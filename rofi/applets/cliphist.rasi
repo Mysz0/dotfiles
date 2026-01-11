@@ -1,0 +1,140 @@
+/**
+ * Modified to match Drun logic for proper blur and layout
+ */
+
+/* Configuration ---------------------------------------------------- */
+configuration {
+    modi:                        "drun";
+    show-icons:                  false;
+    drun-display-format:         "{name}";
+}
+
+/* Config and colors ----------------------------------------------- */
+@import '~/.config/rofi/applets/shared/colors.rasi'
+@import '~/.config/rofi/applets/shared/fonts.rasi'
+
+/* Main Window ------------------------------------------------ */
+window {
+    /* Match the Drun menu logic */
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       800px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    border-radius:               24px;
+    border:                      2px solid;
+    border-color:                @outline;
+    cursor:                      "default";
+    background-color:            @surface-alpha; /* The hex alpha from Matugen */
+}
+
+/* ----- Main Box ----- */
+mainbox {
+    enabled:                     true;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "textbox-help", "message", "listview" ];
+    background-color:            transparent;
+    spacing:                     16px;
+    margin:                      0px;
+    padding:                     20px;
+}
+
+/* Inputbar --------------------------------------------------- */
+inputbar {
+    enabled:                     true;
+    children:                    [ "entry" ];
+    border-radius:               12px;
+    background-color:            transparent;
+    text-color:                  @on-surface;
+    padding:                     10px;
+}
+
+/* Entry input ------------------------------------------------ */
+entry {
+    enabled:                     true;
+    expand:                      true;
+    cursor:                      inherit;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+    border-radius:               12px;
+    background-color:            @primary-fixed-alpha;
+    text-color:                  @on-surface;
+    padding:                     12px;
+    horizontal-align:            0.5;
+}
+
+/* Help Text -------------------------------------------------- */
+textbox-help {
+    expand:                      false;
+    content:                     " [CTRL DEL] Delete 󰆴 | [ALT DEL] Wipe 󱕖 ";
+    border-radius:               10px;
+    background-color:            @secondary-container;
+    text-color:                  @on-secondary-container;
+    margin:                      0px;
+    padding:                     8px;
+    horizontal-align:            0.5;
+}
+
+/* Listview --------------------------------------------------- */
+listview {
+    enabled:                     true;
+    columns:                     2;
+    lines:                       6;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    background-color:            transparent;
+    text-color:                  @on-surface;
+    spacing:                     8px;
+}
+
+/* ---- Elements ---- */
+element {
+    enabled:                     true;
+    cursor:                      pointer;
+    border-radius:               12px;
+    background-color:            transparent; /* Force transparency */
+    text-color:                  @on-surface;
+    padding:                     12px;
+    spacing:                     10px;
+}
+
+element normal.normal,
+element normal.urgent,
+element normal.active,
+element alternate.normal,
+element alternate.urgent,
+element alternate.active {
+    background-color:            transparent;
+    text-color:                  @on-surface;
+}
+
+/* Only the selected item gets a background highlight */
+element selected.normal {
+    background-color:            @primary-fixed-alpha;
+    text-color:                  @on-surface;
+    border:                      0px 0px 0px 4px;
+    border-color:                @primary;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+element-icon {
+    background-color:            transparent;
+    size:                        32px;
+    cursor:                      inherit;
+}

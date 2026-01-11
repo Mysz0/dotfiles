@@ -1,0 +1,82 @@
+[config.wallpaper]
+command = "swww"
+arguments = ["img", "--transition-type", "any"]
+set = true
+
+[templates.colors]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/matugen/colors.css'
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+post_hook = 'hyprctl reload'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/colors.conf'
+post_hook = 'pkill -SIGUSR1 kitty'
+
+[templates.nvim]
+input_path = '~/.config/matugen/templates/nvim_colors.lua'
+output_path = '~/.config/nvim/lua/config/matugen_colors.lua'
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/waybar-colors.css'
+output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
+[templates.swaync]
+input_path = '~/.config/matugen/templates/matugen-swaync.css'
+output_path = '~/.config/swaync/colors.css'
+post_hook = 'swaync-client -rs'
+
+[templates.wlogout]
+input_path = '~/.config/matugen/templates/colors-wlogout.css'
+output_path = '~/.config/wlogout/colors.css'
+
+[templates.hyprlock]
+input_path = '~/.config/matugen/templates/hyprlock-colors.conf'
+output_path = '~/.config/hypr/hyprlock-colors.conf'
+
+[templates.govee]
+input_path = "~/.config/matugen/templates/colors.css"
+output_path = "/tmp/govee-dummy"
+post_hook = 'sh -c "/home/dog/.config/hypr/scripts/govee.sh &"'
+
+[templates.vesktop]
+input_path = "~/.config/matugen/templates/midnight-discord.css"
+output_path = "~/.config/vesktop/themes/matugen_midnight.theme.css"
+
+[templates.spotify]
+input_path = '~/.config/matugen/templates/spotify-colors.ini'
+output_path = '~/.config/spicetify/Themes/Matugen/color.ini'
+post_hook = 'spicetify apply -n'
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/matugen-cava'
+output_path = '~/.config/cava/config'
+
+#[templates.gtk3]
+#input_path = '~/.config/matugen/templates/gtk-colors.css'
+#output_path = '~/.config/gtk-3.0/gtk.css'
+
+#[templates.gtk4]
+#input_path = '~/.config/matugen/templates/gtk-colors.css'
+#output_path = '~/.config/gtk-4.0/gtk.css'
+
+#[templates.qt5]
+#input_path = '~/.config/matugen/templates/qtct-colors.conf'
+#output_path = '~/.config/qt5ct/colors/matugen-qt5ct.conf'
+
+#[templates.qt6]
+#input_path = '~/.config/matugen/templates/qtct-colors.conf'
+#output_path = '~/.config/qt6ct/colors/matugen-qt6ct.conf'
+
+#[templates.kvantum]
+#input_path = '~/.config/matugen/templates/matugen.kvconfig'
+#output_path = '~/.config/Kvantum/matugen/matugen.kvconfig'

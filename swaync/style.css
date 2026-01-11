@@ -1,0 +1,118 @@
+@import url("colors.css");
+
+/* --- Variable Mapping --- */
+/* High translucency for that clean glass look */
+@define-color bg-glass alpha(@surface, 0.6); 
+@define-color border-glass alpha(@on_surface, 0.1);
+
+* {
+  color: @on_surface;
+  all: unset;
+  font-family: "Inter", "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 14px;
+  transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- CONTROL CENTER --- */
+.control-center {
+  background: @bg-glass;
+  border-radius: 20px;
+  border: 1px solid alpha(@primary, 0.3); /* Subtle accent border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  padding: 18px;
+}
+
+.widget-dnd {
+  margin: 12px;
+  font-weight: 800;
+  color: @primary;
+}
+
+.widget-dnd > switch {
+  background: alpha(@on_surface, 0.15);
+  border-radius: 99px;
+  border: 1px solid alpha(@on_surface, 0.2);
+  min-width: 44px;
+  min-height: 22px;
+}
+
+.widget-dnd > switch slider {
+  background: @primary; /* Solid color so it's visible */
+  border-radius: 99px;
+  min-width: 18px;
+  min-height: 18px;
+  margin: 2px;
+}
+
+/* --- NOTIFICATION POPUPS --- */
+.floating-notifications.background .notification-row .notification-background {
+  background: @bg-glass;
+  border-radius: 20px;
+  border: 1px solid alpha(@primary, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin: 12px;
+  padding: 16px; /* Added padding to fix the 'monstrosity' layout */
+}
+
+.notification-content {
+  margin-top: 8px;
+}
+
+.summary {
+  font-weight: 800;
+  font-size: 15px;
+  color: @primary;
+}
+
+.body {
+  color: alpha(@on_surface, 0.85);
+  margin-top: 4px;
+}
+
+/* --- WIDGETS --- */
+.widget-title {
+  color: @primary;
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.widget-volume {
+  background: alpha(@on_surface, 0.08);
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 16px;
+}
+
+/* Volume Slider matching your workspace pill style */
+scale trough {
+  min-height: 10px;
+  border-radius: 99px;
+  background-color: alpha(@on_surface, 0.1);
+}
+
+scale trough highlight {
+  background-color: @primary;
+  border-radius: 99px;
+}
+
+/* Buttons Grid */
+.widget-buttons-grid {
+  padding: 10px;
+  background: alpha(@on_surface, 0.05);
+  border-radius: 16px;
+  margin: 10px 0;
+}
+
+.widget-buttons-grid button {
+  padding: 12px;
+  margin: 5px;
+  background: alpha(@on_surface, 0.08);
+  border-radius: 12px;
+}
+
+.widget-buttons-grid button:hover {
+  background: alpha(@primary, 0.3);
+  color: @primary;
+}

@@ -1,0 +1,86 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "height": 42,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "reload_style_on_change": true,
+    "margin-top": 6,
+    "margin-left": 10,
+    "margin-right": 10,
+
+    "modules-left": ["clock", "custom/pacman", "custom/mpris"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["tray", "pulseaudio", "bluetooth", "network", "custom/notification"],
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "active": " ",
+            "default": "",
+            "empty": ""
+        },
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]
+        }
+    },
+
+    "custom/mpris": {
+        "exec": "python ~/.config/waybar/scripts/waybar-mpris.py",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "max-length": 30,
+        "escape": false
+    },
+
+    "clock": {
+        "format": "󱑊 {:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰌗  Ethernet",
+        "format-disconnected": "󰤮  Disconnected",
+        "on-click": "kitty --title KittyNmtui sh -c 'nmtui'",
+        "tooltip": false
+    },
+
+    "bluetooth": {
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "format-connected": "󰂱",
+        "on-click": "blueman-manager",
+        "tooltip": false
+    },
+
+    "custom/pacman": {
+        "format": "󰅢 {}",
+        "interval": 3600,
+        "exec": "checkupdates | wc -l",
+        "on-click": "kitty --title PacUpdate sh -c 'yay -Syu; echo Done - Press enter to exit; read'",
+        "signal": 8,
+        "tooltip": false
+    },
+
+    "custom/notification": {
+        "format": "󰂚",
+        "on-click": "swaync-client -t -sw",
+        "tooltip": false
+    }
+}

@@ -2,10 +2,6 @@
 
 My personal configuration files for a dynamic, aesthetic Hyprland setup.
 
-# ❗ Warning ai made my quickshell config so I am still changing things up.
-
-
-
 <p align="center">
   <img src="https://github.com/Mysz0/screenshots/blob/main/dotfiles/Screenshot_11-Jan_14-28-08_30953.png?raw=true" width="48%" />
   <img src="https://github.com/Mysz0/screenshots/blob/main/dotfiles/Screenshot_11-Jan_15-39-34_10847.png?raw=true" width="48%" /> 

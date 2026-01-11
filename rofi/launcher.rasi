@@ -1,3 +1,10 @@
+/*****----- Load Colors & Fonts -----*****/
+@import '~/.config/rofi/colors.rasi'
+
+* {
+    font: "JetBrainsMono Nerd Font 11";
+}
+
 /*****----- Configuration -----*****/
 configuration {
     modi:                        "drun,run,filebrowser,window";
@@ -9,10 +16,6 @@ configuration {
     drun-display-format:         "{name}";
     window-format:               "{w} · {c} · {t}";
 }
-
-/*****----- Global Properties -----*****/
-@import "~/.config/rofi/launchers/styles/shared/colors.rasi"
-@import "~/.config/rofi/launchers/styles/shared/fonts.rasi"
 
 /*****----- Main Window -----*****/
 window {
@@ -58,7 +61,7 @@ inputbar {
     padding:                     5px;
     border-radius:               12px;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
 
@@ -70,8 +73,8 @@ textbox-prompt-colon {
     vertical-align:              0.5;
     border-radius:               12px;
     background-color:            @primary;
-    text-color:                  @selected-text;
-    font:                        "GeistMono Nerd Font 16";
+    text-color:                  @surface;
+    font:                        "JetBrainsMono Nerd Font 14";
 }
 
 entry {
@@ -79,8 +82,8 @@ entry {
     padding:                     14px;
     placeholder:                 "Search";
     border-radius:               12px;
-    background-color:            @background;
-    text-color:                  @foreground;
+    background-color:            @surface;
+    text-color:                  @on-surface;
 }
 
 /*****----- Listview -----*****/
@@ -98,7 +101,7 @@ listview {
     padding:                     10px 20px;
     spacing:                     5px;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
 }
 
 /*****----- Elements -----*****/
@@ -108,13 +111,13 @@ element {
     padding:                     8px;
     border-radius:               8px;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
     cursor:                      pointer;
 }
 
 element selected.normal {
-    background-color:            @selected;
-    text-color:                  @selected-text;
+    background-color:            @primary-fixed;
+    text-color:                  @surface;
 }
 
 element-icon {

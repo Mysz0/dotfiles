@@ -64,9 +64,9 @@ for line in proc.stdout:
         if levels and any(v > 0 for v in levels):
             bars = "".join([BAR_CHARS[v] for v in levels])
             # Bars now use the Tertiary color from your CSS
-            text = f"󰎆 {title}  <span color='{BAR_COLOR}' size='small'>{bars}</span>"
+            text = f"󰎆  {title}  <span color='{BAR_COLOR}' size='small'>{bars}</span>"
         else:
-            text = f"󰎆 {title}"
+            text = f"󰎆  {title}"
             
         print(json.dumps({"text": text, "class": "playing"}))
         

@@ -1,63 +1,68 @@
 /*
-* GTK Colors - Generated with Matugen
+* GTK3 & GTK4 / Libadwaita Colors - Generated with Matugen
 */
 
-@define-color accent_color #d7bafb;
-@define-color accent_fg_color #260e44;
-@define-color accent_bg_color #d7bafb;
-@define-color window_bg_color #151218;
-@define-color window_fg_color #e7e0e8;
-@define-color view_bg_color #151218;
-@define-color view_fg_color #e7e0e8;
-@define-color sidebar_bg_color @window_bg_color;
-@define-color sidebar_fg_color @window_fg_color;
+@define-color accent_color #a9c7ff;
+@define-color accent_fg_color #001b3d;
+@define-color accent_bg_color #a9c7ff;
+@define-color window_bg_color #111318;
+@define-color window_fg_color #e2e2e9;
+@define-color view_bg_color #111318;
+@define-color view_fg_color #e2e2e9;
+@define-color sidebar_bg_color #191c20;
+@define-color card_bg_color #37393e;
+@define-color border_color alpha(@accent_color, 0.15);
 
-/* Standard GTK selection overrides */
-@define-color selected_bg_color @accent_bg_color;
-@define-color selected_fg_color @accent_fg_color;
-
-/* --- Thunar Dynamic Interface --- */
-
-/* Main Window and Sidebar backgrounds */
-window.thunar, 
-.thunar grid,
-.thunar toolbar,
-.thunar paned,
-.thunar .sidebar, 
-.thunar view, 
-.thunar treeview,
-.thunar scrolledwindow {
+/* --- Base Window Reset (Targets ONLY the apps) --- */
+.nautilus-window, .thunar, .thunar-window {
     background-color: @window_bg_color;
     color: @window_fg_color;
-    border: none;
 }
 
-/* Sidebar and Main View selection highlighting */
-.thunar .sidebar row:selected,
-.thunar .view:selected,
-.thunar treeview:selected,
-.thunar entry:selection {
-    background-color: @accent_bg_color;
-    color: @accent_fg_color;
+/* --- Sidebar Styling (Adds depth) --- */
+.nautilus-window .sidebar, 
+.thunar .sidebar, 
+.thunar .sidepane {
+    background-color: @sidebar_bg_color;
+    border-right: 1px solid @border_color;
 }
 
-/* Hover effects for a more modern feel */
-.thunar .sidebar row:hover,
-.thunar .view:hover {
-    background-color: alpha(@accent_color, 0.15);
+/* --- The Main View area --- */
+.nautilus-window .view, 
+.thunar .view, 
+.thunar scrolledwindow {
+    background-color: @view_bg_color;
+    border-radius: 12px; /* Rounds the inner view for a modern look */
+    margin: 8px;         /* Creates a gap between the window edge and files */
 }
 
-/* Thunar Sidepane icons (Recolors the symbolic icons only) */
-.thunar .sidebar image {
-    color: @accent_color;
+/* --- Button Fix (Clean & Rounded) --- */
+window.nautilus-window button, 
+window.thunar button {
+    background-image: none;
+    box-shadow: none;
+    background-color: @card_bg_color;
+    border: 1px solid @border_color;
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin: 2px;
 }
 
-/* Progress bars (e.g., file operations/disk usage) */
-.thunar progressbar trough { 
-    background-color: @view_bg_color; 
-    border: 1px solid alpha(@window_fg_color, 0.1);
+window.nautilus-window button:hover, 
+window.thunar button:hover {
+    background-color: alpha(@accent_color, 0.1);
 }
 
-.thunar progressbar progress { 
-    background-color: @accent_color; 
+/* --- Headerbar/Pathbar (Breadcrumbs) --- */
+headerbar, .path-bar {
+    background-color: @window_bg_color;
+    background-image: none;
+    border-bottom: 1px solid @border_color;
+    box-shadow: none;
+}
+
+/* Removes the ugly boxes around path buttons */
+.path-bar button {
+    background-color: transparent;
+    border-color: transparent;
 }

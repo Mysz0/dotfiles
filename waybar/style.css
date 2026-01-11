@@ -18,7 +18,7 @@ window#waybar {
     border: 1px solid alpha(@on_surface, 0.15);
     padding: 4px 12px;
     border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3);
 }
 
 /* --- Module Spacing --- */

@@ -44,7 +44,7 @@
     },
 
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}  {volume}%",
         "format-muted": "󰝟",
         "format-icons": {
             "default": ["󰕿", "󰖀", "󰕾"]
@@ -54,7 +54,7 @@
     },
 
     "network": {
-        "format-wifi": "  {essid}",
+        "format-wifi": "   {essid}",
         "format-ethernet": "󰌗  Ethernet",
         "format-disconnected": "󰤮  Disconnected",
         "on-click": "kitty --title KittyNmtui sh -c 'nmtui'",
@@ -70,7 +70,7 @@
     },
 
     "custom/pacman": {
-        "format": "󰅢 {}",
+        "format": "󰅢  {}",
         "interval": 3600,
         "exec": "checkupdates | wc -l",
         "on-click": "kitty --title PacUpdate sh -c 'yay -Syu; echo Done - Press enter to exit; read'",

@@ -61,13 +61,13 @@ post_hook = 'spicetify apply -n'
 input_path = '~/.config/matugen/templates/matugen-cava'
 output_path = '~/.config/cava/config'
 
-#[templates.gtk3]
-#input_path = '~/.config/matugen/templates/gtk-colors.css'
-#output_path = '~/.config/gtk-3.0/gtk.css'
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
 
-#[templates.gtk4]
-#input_path = '~/.config/matugen/templates/gtk-colors.css'
-#output_path = '~/.config/gtk-4.0/gtk.css'
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
 
 #[templates.qt5]
 #input_path = '~/.config/matugen/templates/qtct-colors.conf'

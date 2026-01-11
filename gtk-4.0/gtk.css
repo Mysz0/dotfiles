@@ -1,1 +1,68 @@
-/usr/share/themes/Breeze-Dark/gtk-4.0/gtk.css
+/*
+* GTK3 & GTK4 / Libadwaita Colors - Generated with Matugen
+*/
+
+@define-color accent_color #a9c7ff;
+@define-color accent_fg_color #001b3d;
+@define-color accent_bg_color #a9c7ff;
+@define-color window_bg_color #111318;
+@define-color window_fg_color #e2e2e9;
+@define-color view_bg_color #111318;
+@define-color view_fg_color #e2e2e9;
+@define-color sidebar_bg_color #191c20;
+@define-color card_bg_color #37393e;
+@define-color border_color alpha(@accent_color, 0.15);
+
+/* --- Base Window Reset (Targets ONLY the apps) --- */
+.nautilus-window, .thunar, .thunar-window {
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+}
+
+/* --- Sidebar Styling (Adds depth) --- */
+.nautilus-window .sidebar, 
+.thunar .sidebar, 
+.thunar .sidepane {
+    background-color: @sidebar_bg_color;
+    border-right: 1px solid @border_color;
+}
+
+/* --- The Main View area --- */
+.nautilus-window .view, 
+.thunar .view, 
+.thunar scrolledwindow {
+    background-color: @view_bg_color;
+    border-radius: 12px; /* Rounds the inner view for a modern look */
+    margin: 8px;         /* Creates a gap between the window edge and files */
+}
+
+/* --- Button Fix (Clean & Rounded) --- */
+window.nautilus-window button, 
+window.thunar button {
+    background-image: none;
+    box-shadow: none;
+    background-color: @card_bg_color;
+    border: 1px solid @border_color;
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin: 2px;
+}
+
+window.nautilus-window button:hover, 
+window.thunar button:hover {
+    background-color: alpha(@accent_color, 0.1);
+}
+
+/* --- Headerbar/Pathbar (Breadcrumbs) --- */
+headerbar, .path-bar {
+    background-color: @window_bg_color;
+    background-image: none;
+    border-bottom: 1px solid @border_color;
+    box-shadow: none;
+}
+
+/* Removes the ugly boxes around path buttons */
+.path-bar button {
+    background-color: transparent;
+    border-color: transparent;
+}
